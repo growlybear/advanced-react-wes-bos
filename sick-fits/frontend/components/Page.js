@@ -9,13 +9,21 @@ const StyledPage = styled.div`
   color: #000;
 `
 
+const Inner = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+`
+
 class Page extends Component {
   render () {
     return (
       <StyledPage>
         <Meta />
         <Header />
-        { this.props.children }
+        <Inner>
+          { this.props.children }
+        </Inner>
       </StyledPage>
     )
   }
