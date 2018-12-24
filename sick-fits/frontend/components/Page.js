@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
+import styled, { ThemeProvider, injectGlobal } from 'styled-components'
 
 import Meta from './Meta'
 import Header from './Header'
+
+const theme = {
+  red: '#f00',
+  black: '#393939',
+  grey: '#e1e1e1',
+  offWhite: '#ededed',
+  maxWidth: '1000px',
+  bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)'
+}
 
 const StyledPage = styled.div`
   background: #fff;
@@ -10,7 +19,8 @@ const StyledPage = styled.div`
 `
 
 const Inner = styled.div`
-  max-width: 1000px;
+  max-width: ${props => props.theme.maxWidth};
+  background: ${props => props.theme.red};
   margin: 0 auto;
   padding: 2rem;
 `
@@ -18,13 +28,15 @@ const Inner = styled.div`
 class Page extends Component {
   render () {
     return (
-      <StyledPage>
-        <Meta />
-        <Header />
-        <Inner>
-          { this.props.children }
-        </Inner>
-      </StyledPage>
+      <ThemeProvider theme={theme}>
+        <StyledPage>
+          <Meta />
+          <Header />
+          <Inner>
+            { this.props.children }
+          </Inner>
+        </StyledPage>
+      </ThemeProvider>
     )
   }
 }
