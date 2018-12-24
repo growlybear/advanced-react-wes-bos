@@ -10,7 +10,8 @@ const theme = {
   grey: '#e1e1e1',
   offWhite: '#ededed',
   maxWidth: '1000px',
-  bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)'
+  bs: '0 12px 24px 0 rgba(0, 0, 0, 0.09)',
+  breakpoint: '1300px',
 }
 
 const StyledPage = styled.div`
