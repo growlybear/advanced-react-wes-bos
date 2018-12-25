@@ -51,11 +51,11 @@ const Header = () => (
         </Link>
       </Logo>
       <Nav />
-      <div className="sub-bar">
-        <p>Search</p>
-      </div>
-      <div>Cart</div>
     </div>
+    <div className="sub-bar">
+      <p>Search</p>
+    </div>
+    <div>Cart</div>
   </StyledHeader>
 )
 
