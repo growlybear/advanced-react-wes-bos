@@ -47,7 +47,7 @@ const Logo = styled.h1`
     text-transform: uppercase;
     text-decoration: none;
   }
-  @media (max-width: 1300px) {
+  @media (max-width: ${props => props.theme.breakpoint}) {
     margin: 0;
     text-align: center;
 
@@ -56,7 +56,7 @@ const Logo = styled.h1`
 
 const Header = () => (
   <StyledHeader>
-  <div className="bar">
+    <div className="bar">
       <Logo>
         <Link href="/">
           <a>Sick Fits</a>
