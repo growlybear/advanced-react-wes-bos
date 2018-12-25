@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: stretch;
     @media (max-width: ${props => props.theme.breakpoint}) {
-      grid-template-colummns: 1fr;
+      grid-template-columns: 1fr;
       justify-content: center;
     }
   }
