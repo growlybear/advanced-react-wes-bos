@@ -14,6 +14,38 @@ const theme = {
   breakpoint: '1300px',
 }
 
+// global reset
+injectGlobal`
+  @font-face {
+    font-family: 'radnika_next';
+    src: url('/static/radnikanext-medium-webfont.woff2');
+    format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+  html {
+    box-sizing: border-box;
+    font-family: 'radnika_next';
+    font-size: 10px;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  body {
+    font-size: 1.5rem;
+    line-height: 2;
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+    color: ${theme.black};
+  }
+  button {
+    font-family: radnika_next;
+  }
+`
+
 const StyledPage = styled.div`
   background: #fff;
   color: #000;
@@ -21,7 +53,6 @@ const StyledPage = styled.div`
 
 const Inner = styled.div`
   max-width: ${props => props.theme.maxWidth};
-  background: ${props => props.theme.red};
   margin: 0 auto;
   padding: 2rem;
 `
@@ -33,9 +64,7 @@ class Page extends Component {
         <StyledPage>
           <Meta />
           <Header />
-          <Inner>
-            { this.props.children }
-          </Inner>
+          <Inner>{ this.props.children }</Inner>
         </StyledPage>
       </ThemeProvider>
     )
