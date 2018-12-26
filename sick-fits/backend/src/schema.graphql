@@ -1,11 +1,17 @@
-type Dog {
-  name: String!
-}
+# import * from './generated/prisma.graphql'
+# 👆 oh my lordy ... imports aren't a standard in graphql
+# hence the need to put them inside a comment 🤦‍♂️
 
 type Query {
-  dogs: [Dog]!
+  items: [Item]!
 }
 
 type Mutation {
-  createDog(name: String!): Dog
+  createItem(
+    title: String,
+    description: String,
+    price: Int,
+    image: String,
+    largeImage: String
+  ): Item!
 }
